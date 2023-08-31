@@ -1,4 +1,5 @@
 #[allow(dead_code)]
+#[cfg(not(tarpaulin))]
 fn foo() -> ! {
     panic!("This call never returns.");
 }

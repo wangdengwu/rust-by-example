@@ -9,4 +9,5 @@ mod flow_control;
 mod functions;
 
 
+#[cfg(not(tarpaulin))]
 fn main() {}

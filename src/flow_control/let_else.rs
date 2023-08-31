@@ -19,4 +19,16 @@ mod tests {
     fn test_get_count_item() {
         assert_eq!(get_count_item("3 chairs"), (3, "chairs"));
     }
+
+    #[test]
+    #[should_panic]
+    fn test_get_count_item_split() {
+        get_count_item("chairs");
+    }
+
+    #[test]
+    #[should_panic]
+    fn test_get_count_item_parse() {
+        get_count_item("a chairs");
+    }
 }
