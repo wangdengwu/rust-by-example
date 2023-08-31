@@ -45,8 +45,8 @@ mod tests {
 
         // But long Tuples (more than 12 elements) cannot be printed.
         let _too_long_tuple = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13);
-        // println!("Too long tuple: {:?}", too_long_tuple);
-        // assert_eq!(too_long_tuple, (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13));
+        #[cfg(error)]
+        assert_eq!(too_long_tuple, (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13));
     }
 
     #[test]

@@ -42,7 +42,8 @@ mod tests {
             }
         }
         // Out of bound indexing on array causes compile time error.
-        // println!("{}", xs[5]);
+        #[cfg(error)]
+        println!("{}", xs[5]);
     }
 
     #[test]

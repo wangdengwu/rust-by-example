@@ -6,9 +6,10 @@ mod tests {
     }
 
     #[test]
-    /// error: this arithmetic operation will overflow
     fn test_integer_subtraction() {
-        // println!("1 - 2 = {}", 1u32 - 2);
+        // error: this arithmetic operation will overflow
+        #[cfg(error)]
+        println!("1 - 2 = {}", 1u32 - 2);
         assert_eq!(-1, 1 - 2);
     }
 
