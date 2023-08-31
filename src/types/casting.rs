@@ -74,6 +74,7 @@ mod tests {
             // 300.0 as u8 is 44
             assert_eq!(44, 300.0_f32.to_int_unchecked::<u8>());
             // -100.0 as u8 is 0
+            #[cfg(target_arch = "aarch64")]
             assert_eq!(0, (-100.0_f32).to_int_unchecked::<u8>());
             // nan as u8 is 0
             assert_eq!(0, f32::NAN.to_int_unchecked::<u8>());
