@@ -10,4 +10,4 @@ mod functions;
 
 
 #[cfg(not(tarpaulin))]
-fn main() {}
+fn main() {}//grcov-excl-line
