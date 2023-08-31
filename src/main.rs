@@ -6,6 +6,7 @@ mod types;
 mod conversion;
 mod expression;
 mod flow_control;
+mod functions;
 
 
 fn main() {}
