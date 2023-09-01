@@ -10,4 +10,4 @@ mod functions;
 
 
 #[cfg(not(tarpaulin))]
-fn main() {} // GCOVR_EXCL_LINE
+fn main() {}
