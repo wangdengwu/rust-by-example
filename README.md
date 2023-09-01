@@ -1,4 +1,4 @@
-[![codecov](https://codecov.io/gh/wangdengwu/rust-by-example/graph/badge.svg?token=GF5N7TB4DE)](https://codecov.io/gh/wangdengwu/rust-by-example)
+![build and test](https://github.com/wangdengwu/rust-by-example/actions/workflows/main.yml/badge.svg) [![codecov](https://codecov.io/gh/wangdengwu/rust-by-example/graph/badge.svg?token=GF5N7TB4DE)](https://codecov.io/gh/wangdengwu/rust-by-example)
 ## rust-by-example
 
 learn rust by example
