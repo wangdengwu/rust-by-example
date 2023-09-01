@@ -27,6 +27,8 @@ jobs:
         run: cargo tarpaulin --include-tests
       - name: Codecov
         uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
           verbose: true
           fail_ci_if_error: true
