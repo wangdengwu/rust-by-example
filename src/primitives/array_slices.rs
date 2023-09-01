@@ -35,7 +35,7 @@ mod tests {
     #[test]
     fn test_for_in_array() {
         let xs: [usize; 5] = [1, 2, 3, 4, 5];
-        for i in 1..xs.len() + 1 {
+        for i in 1..xs.len() + 2 {
             match xs.get(i - 1) {
                 Some(v) => assert_eq!(&i, v),
                 None => assert_eq!(xs.len() + 1, i),

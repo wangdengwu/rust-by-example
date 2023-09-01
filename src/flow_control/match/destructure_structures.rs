@@ -3,38 +3,41 @@ struct Foo {
     y: u32,
 }
 
+fn match_struct(foo: Foo) -> u32 {
+    match foo {
+        Foo { x: (1, b), y } => {
+            println!("First of x is 1, b = {},  y = {} ", b, y);
+            y
+        }
+
+        // you can destructure structs and rename the variables,
+        // the order is not important
+        Foo { y: 2, x: i } => {
+            println!("y is 2, i = {:?}", i);
+            2
+        }
+
+        // and you can also ignore some variables:
+        Foo { y, .. } => {
+            println!("y = {}, we don't care about x", y);
+            y
+        }
+        // this will give an error: pattern does not mention field `x`
+        #[cfg(error)]
+        Foo { y } => println!("y = {}", y),
+    }
+}
+
 #[cfg(test)]
 mod tests {
-    use super::Foo;
+    use super::*;
 
     #[test]
     fn test_struct() {
         // Try changing the values in the struct to see what happens
-        let foo = Foo { x: (1, 2), y: 3 };
-        let y =
-            match foo {
-                Foo { x: (1, b), y } => {
-                    println!("First of x is 1, b = {},  y = {} ", b, y);
-                    y
-                }
-
-                // you can destructure structs and rename the variables,
-                // the order is not important
-                Foo { y: 2, x: i } => {
-                    println!("y is 2, i = {:?}", i);
-                    2
-                }
-
-                // and you can also ignore some variables:
-                Foo { y, .. } => {
-                    println!("y = {}, we don't care about x", y);
-                    y
-                }
-                // this will give an error: pattern does not mention field `x`
-                #[cfg(error)]
-                Foo { y } => println!("y = {}", y),
-            };
-        assert_eq!(y, 3);
+        assert_eq!(match_struct(Foo { x: (5, 2), y: 2 }), 2);
+        assert_eq!(match_struct(Foo { x: (1, 2), y: 3 }), 3);
+        assert_eq!(match_struct(Foo { x: (3, 2), y: 4 }), 4);
 
         let faa = Foo { x: (1, 2), y: 3 };
 

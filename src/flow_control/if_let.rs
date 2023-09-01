@@ -61,7 +61,7 @@ mod tests {
 
         // Variable b does not match Foo::Bar
         // So this will print nothing
-        if let Foo::Bar = b {
+        if let Foo::Baz = b {
             assert!(true);
         }
 
