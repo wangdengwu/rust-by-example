@@ -7,6 +7,7 @@ mod conversion;
 mod expression;
 mod flow_control;
 mod functions;
+mod modules;
 
 
 #[cfg(not(tarpaulin))]
